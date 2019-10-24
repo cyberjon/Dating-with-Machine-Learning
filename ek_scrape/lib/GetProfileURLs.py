@@ -42,6 +42,5 @@ def Go(browser, strURL, intLimit):
 				strURLNewPage = strURLBase + soup.find(id = 'basicsearch_nextpage')['href']
 			browser.visit(strURLNewPage)
 		except:
-			browser = Login(browser)
-			continue
+			break
 	return lstURLProfile
