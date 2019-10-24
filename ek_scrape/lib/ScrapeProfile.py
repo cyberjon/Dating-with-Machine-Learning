@@ -68,16 +68,7 @@ def ScrapeProfile2(soup, dictProfile):
 def ScrapeThumbs(soup, browser, dictProfile, strUsername, strPOFSection):
 	# define vars
 	intCount = 0
-	strSubdir = ''
-	strDir = ''
-	# create dir, if it doesn't exist
-	if strPOFSection[-11:] == 'mycity.aspx':
-		strSubdir = 'MyCity'
-	if strPOFSection[-11:] == 'search.aspx':
-		strSubdir = 'Online'
-	strDir = f'img/{strUsername}/{strSubdir}'
-	if not os.path.exists(strDir):
-		os.mkdir(strDir)
+	strPath = GetPath(strUsername, strPOFSection)
 	# iterate through all "image-thumb-wrap" divs and save thumbnails
 	lstDiv = soup.find_all('div', class_='image-thumb-wrap')
 	for soupItem in lstDiv:
@@ -85,7 +76,7 @@ def ScrapeThumbs(soup, browser, dictProfile, strUsername, strPOFSection):
 		for soupSubItem in lstSubItem:
 			strURL = soupSubItem['src']
 			try:
-				urllib.request.urlretrieve(strURL, f'{strDir}/{dictProfile["username"]}.{intCount:02d}.png')
+				urllib.request.urlretrieve(strURL, f'{strPath}/{dictProfile["username"]}.{intCount:02d}.png')
 				intCount += 1
 			except Exception as e:
 				continue
@@ -101,3 +92,19 @@ def PopulateList(soup, strTag, strClass, fReplaceDoubleReturns):
 		for soupItem in lstRaw:
 			lstOut.append(soupItem.text.replace('\n', ''))
 	return lstOut
+
+# determine (and create, where needed) path for saving files
+def GetPath(strUsername, strPOFSection):
+	strSubdir = ''
+	# create dir, if it doesn't exist
+	if strPOFSection[-11:] == 'mycity.aspx':
+		strSubdir = 'MyCity'
+	if strPOFSection[-11:] == 'search.aspx':
+		strSubdir = 'Online'
+	strDir = f'img/{strUsername}'
+	if not os.path.exists(strDir):
+		os.mkdir(strDir)
+	if not os.path.exists(strDir + '/' + strSubdir):
+		os.mkdir(strDir + '/' + strSubdir)
+	strPath = f'{strDir}/{strSubdir}'
+	return strPath
