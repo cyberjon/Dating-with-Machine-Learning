@@ -20,7 +20,7 @@ def Go(browser, strURL, intLimit):
 		lstDiv = soup.find_all("div", class_="results")
 		if len(lstDiv) == 0:
 			break
-		# iterate thru "My City" page
+		# iterate thru "My City" or "Online" page
 		for strItem in lstDiv:
 			if intCount >= intLimit:
 				break
