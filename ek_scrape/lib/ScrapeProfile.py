@@ -4,7 +4,7 @@ import os
 import urllib.request
 
 # define function: scrape profile
-def Go(soup, browser, strUsername, strPOFSection):
+def Go(soup, browser, strUsername, strPOFSection, strSubdirSuffix):
 	dictProfile = {}
 	
 	# add username and headline to dictProfile
@@ -28,7 +28,7 @@ def Go(soup, browser, strUsername, strPOFSection):
 	dictProfile['about_me_text'] = lstDesc
 	dictProfile['about_me_split'] = lstDescSplit
 	# THUMBNAILS
-	ScrapeThumbs(soup, browser, dictProfile, strUsername, strPOFSection)
+	ScrapeThumbs(soup, browser, dictProfile, strUsername, strPOFSection, strSubdirSuffix)
 	return dictProfile
 
 # define function: scrape profile table 1
@@ -65,10 +65,10 @@ def ScrapeProfile2(soup, dictProfile):
 	return dictProfile
 
 # define function: scrape profile thumbnails
-def ScrapeThumbs(soup, browser, dictProfile, strUsername, strPOFSection):
+def ScrapeThumbs(soup, browser, dictProfile, strUsername, strPOFSection, strSubdirSuffix):
 	# define vars
 	intCount = 0
-	strPath = GetPath(strUsername, strPOFSection)
+	strPath = GetPath(strUsername, strPOFSection, strSubdirSuffix)
 	# iterate through all "image-thumb-wrap" divs and save thumbnails
 	lstDiv = soup.find_all('div', class_='image-thumb-wrap')
 	for soupItem in lstDiv:
@@ -94,7 +94,7 @@ def PopulateList(soup, strTag, strClass, fReplaceDoubleReturns):
 	return lstOut
 
 # determine (and create, where needed) path for saving files
-def GetPath(strUsername, strPOFSection):
+def GetPath(strUsername, strPOFSection, strSubdirSuffix):
 	strSubdir = ''
 	# create dir, if it doesn't exist
 	if strPOFSection[-11:] == 'mycity.aspx':
@@ -104,7 +104,7 @@ def GetPath(strUsername, strPOFSection):
 	strDir = f'img/{strUsername}'
 	if not os.path.exists(strDir):
 		os.mkdir(strDir)
-	if not os.path.exists(strDir + '/' + strSubdir):
-		os.mkdir(strDir + '/' + strSubdir)
-	strPath = f'{strDir}/{strSubdir}'
+	if not os.path.exists(strDir + '/' + strSubdir + strSubdirSuffix):
+		os.mkdir(strDir + '/' + strSubdir + strSubdirSuffix)
+	strPath = f'{strDir}/{strSubdir + strSubdirSuffix}'
 	return strPath
