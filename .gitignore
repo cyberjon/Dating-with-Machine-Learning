@@ -1,2 +1,4 @@
 
 ek_scrape/config.py
+ek_image_ml/CIFAR10Style_doctordata_MyCity.h5
+ek_image_ml/MNIST1DStyle_doctordata_MyCity.h5
