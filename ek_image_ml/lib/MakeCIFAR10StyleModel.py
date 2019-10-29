@@ -8,17 +8,11 @@ from keras.layers import Conv2D, MaxPooling2D
 # define model vars
 fDataAug = False
 intBatchSize = 110
-intEpochCount = 10 # originally 100
+intEpochCount = 5 # originally 100
 intPredictionCount = 1
 
 
-def Go(arrTrainX, arrTestX, arrTrainY, arrTestY):
-	intClassCount = len(arrTrainY.value_counts())
-
-	# Convert class vectors to binary class matrices.
-	arrTrainY = keras.utils.to_categorical(arrTrainY, intClassCount)
-	arrTestX = keras.utils.to_categorical(arrTestY, intClassCount)
-
+def Go(arrTrainX, arrTestX, arrTrainY, arrTestY, intClassCount):
 	# create model
 	model = Sequential()
 	model.add(Conv2D(32, (3, 3), padding='same',
@@ -48,7 +42,7 @@ def Go(arrTrainX, arrTestX, arrTrainY, arrTestY):
 	
 	# train the model using RMSprop
 	# IMPORTANT: for a single yes/no decision, loss is binary_crossentropy, not categorical_crossentropy
-	model.compile(loss='binary_crossentropy',
+	model.compile(loss='categorical_crossentropy',
 				  optimizer=opt,
 				  metrics=['accuracy'])
 				  
