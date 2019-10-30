@@ -1,0 +1,164 @@
+body,
+
+/* h1, */
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+}
+
+.w3-row-padding img {
+    margin-bottom: 12px;
+}
+
+
+/* Set the width of the sidebar to 120px */
+
+.w3-sidebar {
+    width: 120px;
+    background: black;
+    margin-top: 60px;
+    margin-left: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.w3-dropdown-hover {
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.w3-bar-item {
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.w3-bar {
+    margin: 20px;
+}
+
+.funs {
+    position: relative;
+    height: 150px;
+    padding: 20px;
+    margin: 0;
+    background: black;
+    background-image: url("#");
+    background-attachment: fixed;
+    background-position: bottom center;
+    background-size: cover;
+}
+
+.funs h1 {
+    font-size: 0.1rem;
+    animation: title 1.2s forwards linear;
+}
+
+.funs p {
+    font-size: 2rem;
+    opacity: 0;
+    animation: subtitle 1.2s forwards linear;
+    animation-delay: 1.2s;
+}
+
+img {
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+.search-head {
+    margin-top: 15px;
+}
+
+.cheesy {
+    color: darkcyan;
+    font-family: Georgia;
+}
+
+i {
+    margin: 10px;
+    margin-right: 52px
+}
+
+
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+
+#main {
+    margin-left: 120px;
+}
+
+
+/* Remove margins from "page content" on small screens */
+
+@media only screen and (max-width: 600px) {
+    #main {
+        margin-left: 0;
+    }
+}
+
+
+/* about */
+
+.abouthead {
+    margin-top: 25px;
+}
+
+
+/* animations */
+
+.funs h1 {
+    animation: smaller-title 1.2s forwards linear;
+}
+
+
+}
+
+/* keyframe animations which will be used to animate the title */
+@keyframes title {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        font-size: 7.5rem;
+        opacity: 1;
+    }
+}
+@keyframes smaller-title {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        font-size: 5.5rem;
+        opacity: 1;
+    }
+}
+@keyframes subtitle {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+/* about page suggested CSS style */
+
+/* <style>
+    body,
+    html {
+        height: 100%;
+        font-family: "Inconsolata", sans-serif;
+    }
+    
+    
+    
+    .menu {
+        display: none;
+    } 
+
+</style> */

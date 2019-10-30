@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Adjectives</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/css/adjectiveStyle.css">
+</head>
+
+<body class="w3-black">
+
+    <!-- Top menu -->
+    <div class="menu w3-top">
+        <div class="w3-white w3-xlarge w3-black" style="max-width:1200px;margin:auto">
+
+            <div class="data w3-center w3-padding-16">Dat-A-Mate™</div>
+            <div class="w3-left w3-padding-16"><a href="../../../index.html">HOME</a></div>
+            <div class="w3-right w3-padding-16"><a href="../../search.html">SEARCH</a></div>
+        </div>
+    </div>
+
+
+
+    <h2>
+        <div class="w3-container w3-black">
+            <div class="w3-dropdown-hover" id="dropdown1">
+                <div class="w3-dropdown-hover">
+                    <button class="w3-button w3-black" title="Notifications">ADJECTIVES</button>
+                    <div class="w3-dropdown-content w3-black">
+                        <select id="selAdj" onchange="chg()">
+    			            <option value="athletic">athletic</option>
+        			        <option valxue="confident">confident</option>
+	        		        <option value="curvy">curvy</option>
+		        	        <option value="happy">happy</option>
+			                <option value="honest">honest</option>
+			                <option value="sexy">sexy</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="plot"></div>
+            <div class="w3-dropdown-hover" id="dropdown2">
+                <button class="w3-button w3-black" title="Notifications">TRAITS</button>
+                <div class="w3-dropdown-content w3-black">
+                    <select id="selDim" onchange="chg()">
+			            <option value="age">age</option>
+			            <option value="ethnicity">ethnicity</option>
+                        <option value="hair">hair</option>	
+                        <option value="zodiac">zodiac</option>
+			        </select>
+                </div>
+            </div>
+        </div>
+        </div>
+    </h2>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="Summ_adj.json"></script>
+    <script src="adj.js"></script>
+    <script src="../../static/"></script>
+</body>
+
+</html>

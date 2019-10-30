@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Find-A-Mate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/spacelab/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="Find-A-Mate.html">Reset Form</a>
+
+                    <a class="navbar-brand" href="search.html">SEARCH</a>
+                    <a class="navbar-brand" href="../index.html">HOME</a>
+
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div class="hero text-center" height="200">
+            <h1>Find-A-Mate</h1>
+            <p>Today is the Day</p>
+        </div>
+        <div class="container">
+            <div class="row margin-top-50">
+                <div class="col-md-2">
+                    <aside class="filters">
+                        <div class="panel panel-default">
+                            <div class="panel-heading mx-auto">Filter Search</div>
+                            <div class="panel-body">
+                                <form>
+                                    <div class="form-group">
+                                        <ul class="list-group" id="filters">
+                                            <li class="filter list-group-item">
+                                                <label for="Username">Username</label>
+                                                <input class="form-control" id="Username" type="text" placeholder="H0TB0I">
+                                                <label for="City">City</label>
+                                                <input class="form-control" id="City" type="text" placeholder="Austin">
+                                                <label for="Maritial">Maritial</label>
+                                                <input class="form-control" id="Maritial" type="text" placeholder="Single">
+                                                <label for="drugs">Drugs</label>
+                                                <input class="form-control" id="drugs" type="text" placeholder="No">
+                                                <label for="hair">Hair</label>
+                                                <input class="form-control" id="hair" type="text" placeholder="Red">
+                                                <label for="eye">Eye</label>
+                                                <input class="form-control" id="eye" type="text" placeholder="Black">
+                                                <label for="car">Car?</label>
+                                                <input class="form-control" id="car" type="text" placeholder="Yes">
+                                                <label for="children">Children?</label>
+                                                <input class="form-control" id="children" type="text" placeholder="No">
+                                                <label for="relationship">Relationship</label>
+                                                <input class="form-control" id="relationship" type="text" placeholder="Over 3 years">
+                                                <label for="ambitious">Ambitious</label>
+                                                <input class="form-control" id="ambitious" type="text" placeholder="Somewhat Ambitious">
+                                                <label for="pets">Pets</label>
+                                                <input class="form-control" id="pets" type="text" placeholder="Dog">
+                                                <label for="language">Language</label>
+                                                <input class="form-control" id="language" type="text" placeholder="None">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button id="filter-btn" type="submit" class="button button3 btn-primary">Filter Table</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-md-10">
+                    <div id="table-area" class="">
+                        <table id="date-table" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="table-head">Username</th>
+                                    <th class="table-head">City</th>
+                                    <th class="table-head">Maritial</th>
+                                    <th class="table-head">Drugs</th>
+                                    <th class="table-head">Hair</th>
+                                    <th class="table-head">Eye</th>
+                                    <th class="table-head">Car</th>
+                                    <th class="table-head">Children</th>
+                                    <th class="table-head">Relationship</th>
+                                    <th class="table-head">Ambitious</th>
+                                    <th class="table-head">Pets</th>
+                                    <th class="table-head">Language</th>
+                                </tr>
+                            </thead>
+                            <tbody id="date-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <span class="bottom">Dat-A-Mate</span>
+        </footer>
+    </div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="static/js/data.js"></script>
+    <script src="static/js/app.js"></script>
+</body>
+
+</html>
