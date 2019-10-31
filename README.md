@@ -13,3 +13,9 @@ Being able to filter the results began to spark more question and needs of the d
 
 
 ## Can we predict who is hot or not based on a set of parameters?
+
+## Presentation and Codebase
+* [Final Presentation](https://docs.google.com/presentation/d/1Z2Idc8bk-SbY_3RiGBd7BgzGjvhzXQiOOdL1LtjKdWc)
+* [Codebase: Face Recognition](https://github.com/jazminhicks/pof-machine-learning/blob/master/sb_image_ml/face_detector.ipynb)
+* [Codebase: Male or Female](https://github.com/jazminhicks/pof-machine-learning/blob/master/jh_text_nlp/pof_nlp_naive_v3.ipynb)
+* [Codebase: Hot or Not](https://github.com/jazminhicks/pof-machine-learning/blob/master/ek_image_ml/TestPicker-CIFAR10Style_Category.ipynb)
